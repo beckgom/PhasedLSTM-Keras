@@ -85,6 +85,7 @@ class PhasedLSTM(Recurrent):
                             name='{}_b'.format(self.name))
 
         # all three variables (period, phase and r_on) are learnable
+        # period has 10 ~ 100, phase has 0 ~ 1000 (?), r_on = 0.05
         self.timegate = K.variable(
             np.vstack((np.random.uniform(10, 100, self.output_dim),
                        np.random.uniform(0, 1000, self.output_dim),
